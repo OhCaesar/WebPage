@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+</head>
 <body>
-
     <div id="right-navbar">
         <a href="https://www.instagram.com/p._.h._.c/" target="_blank">
             <svg id="instagram_icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,41 +30,91 @@
             </svg>
         </a>
     </div>
-
-    <div id="content">
-        <img src="icons/mountain_trail.svg" id="logo">
-
-        <h1 id="header">
+    <div id="navbar">
+        <h1 style="font-family: 'Bowlby One SC', sans-serif;">
             Cserich Philipp
         </h1>
-        <p>Software Engineer / DevOps</p>
-
-        <div id="description">
-            <div class="rectangle">.</div>
-            <p >"asdfhjsdhfsdjkfjjsdklfjsdklfjsdklfjkdlsfjkldsfksdfjklsdkfjklsdfjlsdkfjklsdfjsdlfjsdklf
-                asdfhjsdhfsdjkfjjsdklfjsdklfjsdklfjkdlsfjkldsfksdfjklsdkfjklsdfjlsdkfjklsdfjsdlfjsdklf
-                asdfhjsdhfsdjkfjjsdklfjsdklfjsdklfjkdlsfjkldsfksdfjklsdkfjklsdfjlsdkfjklsdfjsdlfjsdklf"
-            </p>
+        <div style="display: flex;flex-direction: row; justify-content: flex-end;position: relative;width: 100%;margin-right: 5%;">
+            <h2>Scientific Papers</h2>
+            <h2>Icon Library</h2>
+            <h2>Projects</h2>
         </div>
+
+    </div>
+    <div id="logo">
+        <svg width="226" height="50" viewBox="0 0 226 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 45.1323C8.48219 44.491 14.272 35.6014 16.2316 31.2368C18.6366 31.2368 23.7672 29.9541 25.0499 24.8235C26.3325 19.6929 27.0095 10.3936 27.1876 6.38524C27.8112 5.13821 29.4857 3.01825 31.196 4.51469C33.3337 6.38524 41.0831 31.2368 45.3587 31.2368C49.6342 31.2368 57.3836 29.9007 60.0558 26.1597C62.1936 23.1668 66.8254 22.953 68.8741 23.2202C73.3278 31.1477 83.785 46.6287 89.9846 45.1323C96.1841 43.6359 109.67 40.5896 115.638 39.2535C118.577 39.0753 127.342 39.7345 138.886 43.7962C150.43 47.858 163.648 45.4887 168.815 43.7962C171.22 38.3628 177.205 27.8699 181.909 29.3663C186.612 30.8627 189.747 22.3295 190.727 17.8758C191.261 15.2036 193.346 10.6608 197.407 13.8675C201.469 17.0741 204.444 23.3984 205.424 26.1597C205.958 30.5243 210.822 39.2535 226 39.2535" stroke="black" stroke-width="7"/>
+            </svg>
+            
+    </div>
+    <div id="content">
+
+        
+    </div>
+    <div id="bg-scroll">
     </div>
 
 </body>
 <style>
+    body{
 
-#logo{
-    max-width: 200px;
-    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;  /* Full viewport height */
+    margin: 0;
+    position: relative;
+    }
+#logo {
+    max-width: fit-content;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    background: white;
+    mix-blend-mode: difference;
+    pointer-events: none; /* Prevent interaction issues */
 }
+
+#logo svg path{
+    position: relative; /* Ensure stacking */
+    z-index: 9999; /* Explicitly apply to SVG */
+    /*stroke: white; /* Ensure visibility */
+}
+
 #content{
-    max-width: 400px;
+    position: relative;
     margin: 0 auto;
-    margin-top: 20%;
     text-align: center;
+    width: 100%;
 }
+#navbar{
+    position: sticky;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    padding-left: 20px;
+}
+h2{
+    width: fit-content;margin-left: 10%;font-size: medium;
+}
+h1{width: 50%;}
 #header{
-
-    margin-top: 20%;
-    max-width: 500px;
+    position: relative;
+}
+#bg-scroll{
+    position: relative;
+    margin-top: 100vh;
+    width: 120%;
+    height: 200vh; /* Taller than the viewport to allow scrolling */
+    background: url('icons/forest.jpg') no-repeat center center/cover;
+    z-index: -1;
+    margin-left: -10%;
 }
 #description{
     margin-top: 20%;
@@ -74,15 +126,15 @@
     gap: 10px;
 }
 #right-navbar{
-    position: absolute;
-    margin: 0 auto;
-    right: 20px;
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
 
+
     top: 50%;
+    right: 20px;
     transform: translateY(-50%);
 }
 
@@ -147,4 +199,8 @@
   100%   {color: green;}
 
 }
+
+
 </style>
+<script>
+</script>
